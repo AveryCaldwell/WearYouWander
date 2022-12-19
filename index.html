@@ -4,14 +4,49 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link src="Assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Nova+Square&family=Poppins:wght@200;300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/fc549d153f.js" crossorigin="anonymous"></script>
     <title>Document</title>
 
 </head>
 <body>
-    
+    <section class="header">
+      <nav>
+        <a href="index.html"><img src="/eduford_img/logo.png"></a>
+        <div class="nav-links" id="navLinks">
+          <i class="fa-solid fa-xmark" onclick="hideMenu()"></i>
+          <ul>
+            <li><a href="">HOME</a></li>
+            <li><a href="">ABOUT US</a></li>
+            <li><a href="">POZJE</a></li>
+            <li><a href="">contact</a></li>
+            <li><a href="">HOME</a></li>
+          </ul>
+        </div>
+        <i class="fa-solid fa-bars" onclick="showMenu()"></i>
+      </nav>
+      <div class="text-box">
+        <h1>WearYouWander</h1>
+        <p>iubsdbfsoaudnfoisna ousdfoiusadnf saudofiunsduiafnsdouibfnou sndoaubhfnouasdhbnfosnbdfohun soduifbnosdihabfnousihdbfnousas fnosadhbfousdhbfnousdhnafuo bdsouhasdbfoushdnafjsnfouhbsdnuohfnsdoifnosaidfnasldjnfosidubfnoasidnf osidfna oisjdnfoasidnf asoidfn aosidnfaosidanf oiusbao fibansodinf oaisdbfn osadnfoisadufn osidnfasodinf oaisdbfns foisdafn oisdnfao isdnf osidfn aosdfn diaosfn</p>
+        <a href="" class="hero-btn">GET STARTED</a>
+       </div>
+    </section>
+
+    <section>
+      
+    </section>
 
 
     <script src="Assets/js/script.js"></script>
+    <script>
+      var navLinks = document.getElementById("navLinks")
+      function showMenu(){
+        navLinks.style.right = "0";
+      }
+      function hideMenu(){
+        navLinks.style.right = "-200px";
+      }
+    </script>
 </body>
 </html>
