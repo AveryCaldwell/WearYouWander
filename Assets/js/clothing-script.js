@@ -1,3 +1,3 @@
-curl -X 'GET' \
-  'https://api.shutterstock.com/v2/images/search?added_date=2021-03-29&added_date_start=2021-03-29&aspect_ratio_min=1.7778&aspect_ratio_max=1.7778&aspect_ratio=1.7778&ai_labels_limit=20&ai_industry=retail&added_date_end=2021-03-29&category=outerwear&color=4F21EA&contributor=123456&contributor_country=US&height_from=1080&height_to=1080&image_type=photo&keyword_safe_search=true&language=fr&model=12345&model=67890&orientation=vertical&page=1&per_page=50&people_model_released=true&people_age=20s&people_ethnicity=hispanic&people_gender=both&people_number=1&query=winter%20outerwear%20jacket%20cold&region=US&safe=true&sort=popular&spellcheck_query=true&view=minimal&width_from=1920&width_to=1920' \
-  -H 'accept: application/json'
+// Variable to store the API key for shuttershock
+const clothingKey =
+  "v2/ZDNjMjJHOWc4OXpHVFVrdjJ4d3dnWTdKbmJyQXZIUEovMzY5OTA4NDk3L2N1c3RvbWVyLzQvLWxYREtUZGZQM1hZb1F3b0FqVkZ6Wi1qdXE3UTE5NV92SXpSc1JOcms3YTA2Si1mdFE3dzBsdXljcWtPQUJsMk41ZEZva1ZRaldmZnlKaVJHcGdjMHpqc0haaE9mMWNFS21wdl95Q2ZybHYtbkxmYTNUV2JDUjVJX3Ywck9TUDNzSVZRM29Fc3ZBRTdWb3l0dlhMMWRRdVNEXzZ1cUM4bFgtbHY0cmd1VmtvdVdXTGFJWlJhQm9DVEVuOThXUlBpcFpNc0NxZE1uM1cxbTBhalhVYTIxUS9xTGd0QndIX2wyZXN3ajExLUtlUGd3";
