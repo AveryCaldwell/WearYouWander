@@ -1,2 +1,2 @@
-# Wear You Wander
-An application that analyzes the weather and suggests which type of clothing would be most suitable. 
+# WeatherWear
+An application that analyzes the weather and suggests which type of outerwear would be most suitable. 

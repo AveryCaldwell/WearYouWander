@@ -1,0 +1,14 @@
+shutter token: v2/ZDNjMjJHOWc4OXpHVFVrdjJ4d3dnWTdKbmJyQXZIUEovMzY5OTA4NDk3L2N1c3RvbWVyLzQvLWxYREtUZGZQM1hZb1F3b0FqVkZ6Wi1qdXE3UTE5NV92SXpSc1JOcms3YTA2Si1mdFE3dzBsdXljcWtPQUJsMk41ZEZva1ZRaldmZnlKaVJHcGdjMHpqc0haaE9mMWNFS21wdl95Q2ZybHYtbkxmYTNUV2JDUjVJX3Ywck9TUDNzSVZRM29Fc3ZBRTdWb3l0dlhMMWRRdVNEXzZ1cUM4bFgtbHY0cmd1VmtvdVdXTGFJWlJhQm9DVEVuOThXUlBpcFpNc0NxZE1uM1cxbTBhalhVYTIxUS9xTGd0QndIX2wyZXN3ajExLUtlUGd3
+
+consumer key: d3c22G9g89zGTUkv2xwwgY7JnbrAvHPJ
+
+consumer secret: qSH4uZxfRgFoVwyX
+
+
+User Name: averycaldwell763
+
+User ID: 369908497
+
+Using any text editor, copy the following code into the public/index.html file:
+    <link rel="stylesheet" type="text/css" href="https://api-cdn.shutterstock.com/{%version%}/static/css/sstk-widget.css">
+    <script src="https://api-cdn.shutterstock.com/{%version%}/static/js/sstk-widget.js"></script>

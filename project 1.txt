@@ -1,0 +1,59 @@
+### USER STORY
+
+# A reminder application that keeps track of important tasks
+
+- AS a senior citizen // WHO
+- I WANT to be able to keep track of my important tasks // WHAT
+- SO THAT I can complete all of my daily tasks // WHY
+
+
+### KANBAN
+- a way to visualize the work you are doing
+- cards begin in the to do columns and are moved left to right as work is started and completed
+
+# To Do
+# In Progress
+# Done
+
+
+
+### GITHUB PROJECTS
+~ New
+- create landing page
+- call weather API
+
+
+### STANDUP MEETINGS
+- What was accomplished
+- What are your goals
+- Are there any obstacles to achieveing your goals
+
+
+
+### PROJECT TIMELINE
+divide into groups
+write a user story
+create a wireframe
+create a user flow diagram
+submit project proposal for approval - name of project, blurb of what doing, what apis using
+
+
+## REQUIREMENTS
+~ two server side APIs
+~ CSS framework other than bootstarp
+~ client side storage to store persistne tdata
+~ polished UI
+~ good quality coding standards
+~ NO alerts, confirms or prompts
+~ deployed to github pages
+~ intereactive - accept and respond to user input
+
+
+### PRESENTATION
+~ 10 minutes
+~ 1 min description of application - elevator pitch
+~ Whats the user story? Whats the motivation for development?
+~ What technologies used? How were tasks and roles broken down and assigned? What challenges did you encounter? What were your successes?
+~ Demo - Show your stuff
+~ Directions for future development
+~ Links to the deployed apllication and the github repo
