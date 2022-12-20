@@ -9,6 +9,7 @@ let option4 = document.getElementById("option4");
 let option5 = document.getElementById("option5");
 let option6 = document.getElementById("option6");
 
+// This function gets an image from the searched string
 var returnedImages;
 function getImageObj(searchString) {
   var myHeaders = new Headers();
@@ -22,6 +23,7 @@ function getImageObj(searchString) {
     headers: myHeaders,
     redirect: "follow",
   };
+  // fetches API url with specific parameters
   fetch(
     "https://api.shutterstock.com/v2/images/search?category=fashion picture&per_page=500&query=" +
       searchString,
@@ -29,11 +31,13 @@ function getImageObj(searchString) {
   )
     .then((response) => response.json())
     .then((data) => {
-      returnedImages = data;
+      returnedImages = data; // returnedImage will be used as data in the next function
       console.log(data);
     })
     .catch((error) => console.log("error", error));
 }
+
+// This function selects a random image from the searchString
 function randomImage() {
   let length = returnedImages.data.length;
   console.log(length);
@@ -42,6 +46,7 @@ function randomImage() {
   document.getElementById("option1img").src =
     returnedImages.data[randomNumber].assets.preview_1000.url;
 }
+
 // Object of weather types
 weatherObj = {
 rain: "wet rainy waterproof",
@@ -55,11 +60,6 @@ clear sky: "clear sky",
 drizzle: "drizzle",
 clear: "clear",
 };
-
-//  502x711
-// --photo----
-// link to portfolio
-
 
 
 // have to call:
