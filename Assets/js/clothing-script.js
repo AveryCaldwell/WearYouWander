@@ -47,10 +47,7 @@ weatherObj = {
 };
 
 
-// STANDUP: 
-// what have i finished?
-// what am i working on?
-// what are my blockers?
+
 
 // have to call:
 // getImageObj("hot summer clothing")
