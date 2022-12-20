@@ -11,9 +11,6 @@
   background-size: cover;
   position: relative;
 }
-.body{
-  background-color: black;
-}
 
 nav{
   display: flex;
