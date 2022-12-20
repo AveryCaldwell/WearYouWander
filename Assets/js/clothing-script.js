@@ -42,10 +42,23 @@ function randomImage() {
   document.getElementById("option1img").src =
     returnedImages.data[randomNumber].assets.preview_1000.url;
 }
+// Object of weather types
 weatherObj = {
-  rain: "wet rainy waterproof",
+rain: "wet rainy waterproof",
+overcast: "overcast ",
+clouds: "clouds",
+snow: "snow",
+sun: "sun",
+mist: "mist",
+thunderstorm: "thunderstorm",
+clear sky: "clear sky",
+drizzle: "drizzle",
+clear: "clear",
 };
 
+//  502x711
+// --photo----
+// link to portfolio
 
 
 
