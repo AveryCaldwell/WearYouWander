@@ -10,27 +10,26 @@
     <link rel="stylesheet" type="text/css"
         href="https://api-cdn.shutterstock.com/{%version%}/static/css/sstk-widget.css">
     <script src="https://api-cdn.shutterstock.com/{%version%}/static/js/sstk-widget.js"></script>
-    <link rel="stylesheet" href="/assets/css/style2.css">
+    <link rel="stylesheet" href="./assets/css/style2.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.5/dist/css/foundation.min.css"
         crossorigin="anonymous">
 </head>
 <body>
-    <section id="home" class="header">
-      <section id="home" class="header">
-        <nav>
-          <a href="index.html"><img src="/img/WearYouWander (3).png"></a>
-          <div class="nav-links" id="navLinks">
-            <i class="fa-solid fa-xmark" onclick="hideMenu()"></i>
-            <ul>
-              <li><a href="#home">HOME</a></li>
-              <li><a href="#servicelink">OUR SERVICES</a></li>
-              <li><a href="#team">OUR TEAM</a></li>
-              <li><a href="#about">ABOUT US</a></li>
-            </ul>
-          </div>
-          <i class="fa-solid fa-bars" onclick="showMenu()"></i>
-        </nav>
-      </section>
+  <section id="home" class="header">
+    <nav>
+      <a href="index.html"><img src="/img/WearYouWander (3).png"></a>
+      <div class="nav-links" id="navLinks">
+        <i class="fa-solid fa-xmark" onclick="hideMenu()"></i>
+        <ul>
+          <li><a href="#home">HOME</a></li>
+          <li><a href="#servicelink">OUR SERVICES</a></li>
+          <li><a href="#team">OUR TEAM</a></li>
+          <li><a href="#about">ABOUT US</a></li>
+        </ul>
+      </div>
+      <i class="fa-solid fa-bars" onclick="showMenu()"></i>
+    </nav>
+  </section>
 
     <!-- Clothing Section -->
     <section id="clothing">
@@ -54,6 +53,17 @@
       <!-- end of clothingContainer div -->
   </section>
 
+
+
+  <script>
+    var navLinks = document.getElementById("navLinks")
+    function showMenu(){
+      navLinks.style.right = "0";
+    }
+    function hideMenu(){
+      navLinks.style.right = "-200px";
+    }
+  </script>
       
       <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.5/dist/js/foundation.min.js" crossorigin="anonymous"></script>
 </body>
