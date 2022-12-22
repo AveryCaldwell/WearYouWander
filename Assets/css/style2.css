@@ -119,166 +119,67 @@ nav .fa-solid{
   color: #8a8a8a;
 }
 
-/* img */
 
-@charset "UTF-8";
-
-.testimonial-slider-container {
-  background: #e6e6e6;
-  padding: 1rem 1rem;
-}
-
-.testimonial-slider-container .orbit-previous,
-.testimonial-slider-container .orbit-next {
-  color: #0a0a0a;
-}
-
-.testimonial-slider-container .orbit-previous:hover, .testimonial-slider-container .orbit-previous:active, .testimonial-slider-container .orbit-previous:focus,
-.testimonial-slider-container .orbit-next:hover,
-.testimonial-slider-container .orbit-next:active,
-.testimonial-slider-container .orbit-next:focus {
-  background-color: transparent;
-}
-
-.testimonial-slider-container .orbit-previous {
-  left: -1rem;
-}
-
-.testimonial-slider-container .orbit-next {
-  right: -1rem;
-}
-
-.testimonial-slider-container .testimonial-slide {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.testimonial-slider-container .testimonial-slide-content {
-  padding: 1rem 1.5rem;
-}
-
-@media screen and (min-width: 40em) {
-  .testimonial-slider-container .testimonial-slide-content {
-    padding: 1rem 4rem;
-  }
-}
-
-.testimonial-slider-container .profile-pic {
-  max-width: 225px;
-}
-
-.testimonial-slider-container .testimonial-slide-text {
-  padding-left: 3rem;
-}
-
-.testimonial-slider-container .testimonial-slide-quotation {
-  font-size: 1.2rem;
-  position: relative;
-}
-
-.testimonial-slider-container .testimonial-slide-quotation::before {
-  content: "“";
-  font-size: 6rem;
-  color: #d6d6d6;
-  position: absolute;
-  top: -3rem;
-  left: -3rem;
-}
-
-.testimonial-slider-container .testimonial-slide-author-container {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-@media screen and (max-width: 39.9375em) {
-  .testimonial-slider-container .testimonial-slide-author-container .testimonial-slide-author-info {
-    margin-left: 1rem;
-  }
-}
 
 /* img */
 
-
-.image-hover-wrapper {
+.container{
+  width: 45%;
+  padding: 20px;
+  margin: 100px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   position: absolute;
-  max-width: 500px;
-  top: 200px;
+  top: 70px;
   left: 50px;
 }
 
-.image-hover-wrapper a {
-  display: inline-block;
-  letter-spacing: normal;
-  line-height: initial;
-  margin: 0;
-  padding: 0;
-  position: relative;
+.box{
+  width: 250px;
+  margin: 0 10px;
+  box-shadow: 0 0 20px 2px rgba(0, 0, 0, .1);
+  transition: 1s;
 }
-
-.image-hover-wrapper a img {
-  float: left;
-  overflow: hidden;
-  width: 100%;
-}
-
-.image-hover-wrapper a .image-hover-wrapper-reveal {
-  background-color: rgba(0, 0, 0, 0.5);
-  color: #fefefe;
-  display: inline;
-  height: 100%;
-  margin-left: -100%;
-  opacity: 0;
-  position: absolute;
-  width: 100%;
-  z-index: 80;
-  transition: all 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  transition-delay: 0.25s;
-}
-
-.image-hover-wrapper a .image-hover-wrapper-reveal:hover {
-  opacity: 1;
-  transition: all 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-.image-hover-wrapper a .image-hover-wrapper-reveal:hover p {
-  opacity: 1;
-  -webkit-transform: translateY(-100%);
-      -ms-transform: translateY(-100%);
-          transform: translateY(-100%);
-  transition: all 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  transition-delay: 0.25s;
-}
-
-.image-hover-wrapper a .image-hover-wrapper-reveal p {
-  bottom: 0;
+.box img{
   display: block;
-  opacity: 0;
-  position: absolute;
-  text-align: center;
   width: 100%;
-  transition: all 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  border-radius: 5px;
 }
-
-.image-hover-wrapper a .fa {
-  font-size: 24px;
+.box:hover{
+  transform: scale(1.1);
+  z-index: 2;
 }
-
-.image-hover-wrapper .image-hover-wrapper-banner {
-  background-color: rgba(23, 121, 186, 0.8);
-  color: #fefefe;
-  font-weight: 600;
-  left: 0;
-  padding: 0.5rem;
+/* img2 */
+.container2{
+  width: 45%;
+  padding: 20px;
+  margin: 100px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   position: absolute;
-  top: 25%;
-  width: 75%;
-  z-index: 10;
+  top: 315px;
+  left: 50px;
 }
+
+.box2{
+  width: 250px;
+  margin: 0 10px;
+  box-shadow: 0 0 20px 2px rgba(0, 0, 0, .1);
+  transition: 1s;
+}
+.box2 img{
+  display: block;
+  width: 100%;
+  border-radius: 5px;
+}
+.box2:hover{
+  transform: scale(1.1);
+  z-index: 2;
+}
+
+
 
 
 
