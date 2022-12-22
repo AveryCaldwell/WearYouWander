@@ -91,7 +91,7 @@ function getImageObj(searchString) {
   };
   // fetches API url with specific parameters
   fetch(
-    "https://api.shutterstock.com/v2/images/search?image_type=photo&category=outfit&per_page=500&query=" +
+    "https://api.shutterstock.com/v2/images/search?image_type=photo&category=outfit&per_page=500&image_type=photo&people_age=20s&people_number=1&query=" +
       searchString,
     requestOptions
   )
@@ -154,16 +154,4 @@ document.addEventListener(
   false
 );
 
-// This object search categories for weather types
-// searchObj = {
-//   rain: "adult rain clothes", //wet stormy weather
-//   overcast: "autumn clothing", //fall weather
-//   clouds: "fall outfit cool outfit",
-//   snow: "warm outerwear winter clothing", //cold weather
-//   sun: "summer outfit",
-//   mist: "rainy day clothing",
-//   thunderstorm: "windy rain clothes",
-//   clearsky: "summer spring clothes",
-//   drizzle: "waterproof outfit",
-//   clear: "spring outfit",
-// };
+// people_gender; Valid values: male, female, both
