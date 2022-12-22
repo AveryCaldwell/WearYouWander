@@ -2,17 +2,18 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- Link to Clothing Images API -->
-    <link rel="stylesheet" type="text/css"
-        href="https://api-cdn.shutterstock.com/{%version%}/static/css/sstk-widget.css">
-    <script src="https://api-cdn.shutterstock.com/{%version%}/static/js/sstk-widget.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.5/dist/css/foundation.min.css">
-    <link rel="stylesheet" href="./assets/css/style2.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- Link to Clothing Images API -->
+  <link rel="stylesheet" type="text/css" href="https://api-cdn.shutterstock.com/{%version%}/static/css/sstk-widget.css">
+  <script src="https://api-cdn.shutterstock.com/{%version%}/static/js/sstk-widget.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.5/dist/css/foundation.min.css">
+  <link rel="stylesheet" href="./assets/css/style2.css">
+
 </head>
+
 <body>
   <section id="home" class="header">
     <nav>
@@ -48,6 +49,7 @@
           </select>
         </label>
       </div>
+<<<<<<< HEAD:getstarted.html
       <div class="row columns">
         <label>Date
           <select name="status" type="text">
@@ -89,6 +91,48 @@
           <!-- end of suggestionBoxes div -->
       </div>
       <!-- end of clothingContainer div -->
+=======
+      <label>Date
+        <select name="status" type="text">
+          <option>Any</option>
+          <option value="office">Office</option>
+          <option value="building">Building</option>
+        </select>
+      </label>
+  </div>
+  <div class="row columns">
+    <label>Location
+      <input type="text" name="location" placeholder="Any">
+    </label>
+  </div>
+  <button type="button" class="primary button expanded search-button">
+    Search
+  </button>
+  </form>
+  </div>
+
+
+  <!-- Clothing Section -->
+  <section id="clothing">
+    <div id="clothingContainer">
+      <!-- Clothing Image Suggestions for based off weather -->
+      <div id="suggestionCards">
+        <div id="option1"><img id="option1img" src="" /></div>
+
+        <div id="option2"><img id="option2img" src="" /></div>
+
+        <div id="option3"><img id="option3img" src="" /></div>
+
+        <div id="option4"><img id="option4img" src="" /></div>
+
+        <div id="option5"><img id="option5img" src="" /></div>
+
+        <div id="option6"><img id="option6img" src="" /></div>
+      </div>
+      <!-- end of suggestionBoxes div -->
+    </div>
+    <!-- end of clothingContainer div -->
+>>>>>>> 094f30e01ec442accd4759265e28f85cb08eb0eb:index2.html
   </section>
 
 
@@ -118,16 +162,20 @@
   </div>
 </div>
 
+
   <script>
     var navLinks = document.getElementById("navLinks")
-    function showMenu(){
+    function showMenu() {
       navLinks.style.right = "0";
     }
-    function hideMenu(){
+    function hideMenu() {
       navLinks.style.right = "-200px";
     }
   </script>
-      
-      <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.5/dist/js/foundation.min.js" crossorigin="anonymous"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.5/dist/js/foundation.min.js"
+    crossorigin="anonymous"></script>
+
 </body>
+
 </html>
