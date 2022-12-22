@@ -25,14 +25,15 @@ function getImageObj(searchString) {
   };
   // fetches API url with specific parameters
   fetch(
-    "https://api.shutterstock.com/v2/images/search?category=fashionpicture&per_page=500&query=" +
+    "https://api.shutterstock.com/v2/images/search?image_type=photo&category=outfit&per_page=500&query=" +
       searchString,
     requestOptions
   )
     .then((response) => response.json())
     .then((data) => {
-      returnedImages = data; // returnedImage will be used as data in the next function
+      returnedImages = data; // returnedImages will be used as data in the next function
       console.log(data);
+      randomImage();
     })
     .catch((error) => console.log("error", error));
 }
@@ -40,31 +41,57 @@ function getImageObj(searchString) {
 // This function selects a random image from the searchString
 function randomImage() {
   let length = returnedImages.data.length;
-  console.log(length);
-  let randomNumber = Math.floor(Math.random() * (length - 1));
-  console.log(randomNumber);
-  document.getElementById("option1img").src =
-    returnedImages.data[randomNumber].assets.preview_1000.url;
+  let randomNumber;
+  for (i = 1; i < 7; i++) {
+    randomNumber = Math.floor(Math.random() * (length - 1));
+    document.getElementById("option" + i + "img").src =
+      returnedImages.data[randomNumber].assets.preview_1000.url;
+  }
+  // TODO:  display image in the html
 }
 
-// This object holds the arrays of weather types
-weatherObj = {
-rain: ["rainy day outfit"],
-overcast: ["autumn clothing"],
-clouds: ["fall outfit", "cool outfit"],
-snow: ["warm outerwear", "winter clothing"],
-sun: ["summer outfit"],
-mist: ["rainy day clothing"],
-thunderstorm: ["windy rain clothes"],
-clear sky: ["summer clothes", "spring clothes"],
-drizzle: ["waterproof outfit",],
-clear: ["spring outfit"],
-};
+// This object search categories for weather types
+// searchObj = {
+//   rain: "adult rain clothes", //wet stormy weather
+//   overcast: "autumn clothing", //fall weather (UNLESS ITS HOT BECAUSE JUNE GLOOM SUCKS)
+//   clouds: "fall outfit cool outfit",
+//   snow: "warm outerwear winter clothing", //cold weather
+//   sun: "summer outfit",
+//   mist: "rainy day clothing",
+//   thunderstorm: "windy rain clothes",
+//   clearsky: "summer spring clothes",
+//   drizzle: "waterproof outfit",
+//   clear: "spring outfit",
+// };
 
-// TODO: fix
-  localStorage.setItem("weatherObj", weatherObj[i].toString());
-      weatherObj = localStorage.getItem("weaterObj").split(",");
+//whether it's cold, medium or hot temp wise
+//is it wet, snowy, hail or clear
+
+const weatherTranslationObj = {
+  cold: {
+    wet: "rain",
+    snow: "snow",
+    clear: "snow",
+  },
+  medium: { wet: "rain", clear: "spring" },
+  hot: { wet: "warmrain", clear: "summer" },
+};
+const searchObj = {
+  snow: "adult snow clothes",
+  rain: "adult rain clothes",
+  spring: "adult spring clothes",
+  summer: "adult summer clothes",
+  warmrain: "adult warm rain clothes",
+};
+//getImageObj(searchObj[weatherTranslationObj["cold"]["snow"]])
+
+
+
+
+
 
 // have to call:
 // getImageObj("hot summer clothing")
 // then returnedImages()
+
+
