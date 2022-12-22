@@ -1,31 +1,20 @@
-// WEATHER SCRIPT
-let APIKey = "NTQ98KVPDV7PY54XFFEGJ4AT3"
+let APIKey = "NTQ98KVPDV7PY54XFFEGJ4AT3";
 
-let citySearched = " "
-let weatherData = " "
-let searchBtn = document.querySelector("searchBtn")
-
-searchBtn.addEventListener("click", function() {
-    citySearched = citySearched.value
-
-    weatherData = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/" + citySearched + APIKey + "&contentType=json"
-})
+let citySearched = " ";
+let weatherData = " ";
 
 function setWeather() {
-
-    fetch(weatherData)
-    .then((function (response)){
-        return response.JSON()
+  fetch(weatherData)
+    .then(function (response) {
+      return response.JSON();
     })
-    .then((function (weatherConditions)){
-
-        let temperature = weatherConditions.temp
-        let conditionsToday = weatherConditions.conditions
-        let precipitation = weatherConditions.precip
-        let precipitationType = weatherConditions.preciptype
-        let wind = weatherConditions.windspeed
-
-    })
+    .then(function (weatherConditions) {
+      let temperature = weatherConditions.temp;
+      let conditionsToday = weatherConditions.conditions;
+      let precipitation = weatherConditions.precip;
+      let precipitationType = weatherConditions.preciptype;
+      let wind = weatherConditions.windspeed;
+    });
 }
 
 /*
@@ -75,9 +64,6 @@ fetch("https://weather.visualcrossing.com/VisualCrossingWebServices/rest/service
 
 */
 
-
-// START OF IMAGE/CLOTHING SCRIPT 
-
 // variable to store the API key for shuttershock
 const clothingKey =
   "v2/ZDNjMjJHOWc4OXpHVFVrdjJ4d3dnWTdKbmJyQXZIUEovMzY5OTA4NDk3L2N1c3RvbWVyLzQvYlpzdFB0TVZEMVp2VGpta2Q3NzM1LWNDS3ZOZTBNeWo5NFp3T0tBQVZCRk9RekZVQVlxa05tcENQSmtoRGZRNUhXZkpIX0VkSzlHbXZBel9PS2lNWGp4SjlUZFNKMDlUWGJPTEdVUGdVakszWm9qMkZjM3BMUjZuWWNIVTNrYjJuVGhneTJDZzQ1NW5kRjg4by1LOEJkQUMzb0k5TkY5UGIxWG1qVzZkQnBnQ0FnQUVkcXhtTkJGQWluY19PbWxtTWlaeS1ucGVYZmtCSnR2QW9GaHRKdy8ycmJrbXhETTdlUDJOOHF3eTlrRHR3";
@@ -125,10 +111,11 @@ function randomImage() {
   for (i = 1; i < 7; i++) {
     randomNumber = Math.floor(Math.random() * (length - 1));
     document.getElementById("option" + i + "img").src =
-      returnedImages.data[randomNumber].assets.preview_1000.url;
+      returnedImages.data[randomNumber].assets.preview.url;
   }
 }
 
+// Transalation object that sets image search parameters
 const weatherTranslationObj = {
   cold: {
     wet: "rain",
@@ -139,22 +126,38 @@ const weatherTranslationObj = {
   hot: { wet: "warmrain", clear: "summer" },
 };
 const searchObj = {
-  snow: "adult snow clothes",
+  snow: "adult snow cat",
   rain: "adult rain clothes",
   spring: "adult spring clothes",
   summer: "adult summer clothes",
   warmrain: "adult warm rain clothes",
 };
 
-// have to call:
-//getImageObj(searchObj[weatherTranslationObj["cold"]["snow"]])
-// getImageObj("hot summer clothing")
-// then returnedImages()
+// event listener for search buttonn
+document.addEventListener(
+  "DOMContentLoaded",
+  function () {
+    let searchBtn = document.querySelector("#searchBtn");
+
+    searchBtn.addEventListener("click", function () {
+      citySearched = citySearched.value;
+
+      weatherData =
+        "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/" +
+        citySearched +
+        APIKey +
+        "&contentType=json";
+      //setWeather();
+      getImageObj(searchObj[weatherTranslationObj["hot"]["clear"]]);
+    });
+  },
+  false
+);
 
 // This object search categories for weather types
 // searchObj = {
 //   rain: "adult rain clothes", //wet stormy weather
-//   overcast: "autumn clothing", //fall weather 
+//   overcast: "autumn clothing", //fall weather
 //   clouds: "fall outfit cool outfit",
 //   snow: "warm outerwear winter clothing", //cold weather
 //   sun: "summer outfit",
