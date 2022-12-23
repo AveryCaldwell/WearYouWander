@@ -1,8 +1,8 @@
-
 // variable to store the API key for shuttershock
 const clothingKey =
   "v2/ZDNjMjJHOWc4OXpHVFVrdjJ4d3dnWTdKbmJyQXZIUEovMzY5OTA4NDk3L2N1c3RvbWVyLzQvYlpzdFB0TVZEMVp2VGpta2Q3NzM1LWNDS3ZOZTBNeWo5NFp3T0tBQVZCRk9RekZVQVlxa05tcENQSmtoRGZRNUhXZkpIX0VkSzlHbXZBel9PS2lNWGp4SjlUZFNKMDlUWGJPTEdVUGdVakszWm9qMkZjM3BMUjZuWWNIVTNrYjJuVGhneTJDZzQ1NW5kRjg4by1LOEJkQUMzb0k5TkY5UGIxWG1qVzZkQnBnQ0FnQUVkcXhtTkJGQWluY19PbWxtTWlaeS1ucGVYZmtCSnR2QW9GaHRKdy8ycmJrbXhETTdlUDJOOHF3eTlrRHR3";
 
+// Variables for images of clothing
 let option1 = document.getElementById("option1");
 let option2 = document.getElementById("option2");
 let option3 = document.getElementById("option3");
@@ -69,8 +69,6 @@ const searchObj = {
   warmrain: "adult warm rain clothes",
 };
 
-
-
 // Weather API variables
 let APIKey = "NTQ98KVPDV7PY54XFFEGJ4AT3";
 
@@ -95,7 +93,7 @@ document.addEventListener(
         citySearched +
         "?unitGroup=us&elements=" +
         dateSearched +
-        "%2Ctemp%2Cconditions&include=days%2Ccurrent" + 
+        "%2Ctemp%2Cconditions&include=days%2Ccurrent" +
         APIKey +
         "&contentType=json";
       //setWeather();
