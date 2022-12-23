@@ -104,18 +104,11 @@ document.addEventListener(
 );
 
 function setWeather() {
-  fetch(weatherData) {
-      "method": "GET",
-      "headers": {
-      }
-      };
-    .then((response) => (response.JSON ())) {
-      console.log(response);
-  }
-    /*.then(function (response) {
+  fetch(weatherData) 
+     .then(function (response) {
       return response.JSON();
     })
-    */
+    
     .then(function (weatherConditions) {
       let historicalFcst = weatherConditions.statsfcst;
       let temperature = weatherConditions.temp;
@@ -124,7 +117,7 @@ function setWeather() {
       
       console.log(historicalFcst, temperature, feelsLike, conditionsToday);
     });
-}
+
 
 // people_gender; Valid values: male, female, both
 
@@ -183,6 +176,4 @@ JSON response would be:
   "feelslike": 53.7,
   "conditions": "Overcast"
  }
-}
-
-*/
+} */
