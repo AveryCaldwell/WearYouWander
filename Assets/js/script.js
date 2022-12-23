@@ -1,68 +1,3 @@
-let APIKey = "NTQ98KVPDV7PY54XFFEGJ4AT3";
-
-let citySearched = " ";
-let weatherData = " ";
-
-function setWeather() {
-  fetch(weatherData)
-    .then(function (response) {
-      return response.JSON();
-    })
-    .then(function (weatherConditions) {
-      let temperature = weatherConditions.temp;
-      let conditionsToday = weatherConditions.conditions;
-      let precipitation = weatherConditions.precip;
-      let precipitationType = weatherConditions.preciptype;
-      let wind = weatherConditions.windspeed;
-    });
-}
-
-/*
-fetch("https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/united%20states?unitGroup=us&include=days%2Ccurrent&key=NTQ98KVPDV7PY54XFFEGJ4AT3&contentType=json", {
-  "method": "GET",
-  "headers": {
-  }
-  })
-.then(response => {
-  console.log(response);
-})
-.catch(err => {
-  console.error(err);
-});
-
-{
- "queryCost": 1,
- "latitude": 38.8904,
- "longitude": -77.032,
- "resolvedAddress": "United States",
- "address": "united states",
- "timezone": "America/New_York",
- "tzoffset": -5,
- "days": [
-  {
-   "datetimeEpoch": 1671598800,
-   "temp": 35.5,
-   "feelslike": 33,
-   "precip": 0,
-   "preciptype": null,
-   "windspeed": 10.5,
-   "conditions": "Partially cloudy",
-   "icon": "partly-cloudy-day"
-  }
- ],
- "currentConditions": {
-  "datetimeEpoch": 1671679200,
-  "temp": 34.4,
-  "feelslike": 34.4,
-  "precip": 0,
-  "preciptype": null,
-  "windspeed": 0,
-  "conditions": "Clear",
-  "icon": "clear-night"
- }
-}
-
-*/
 
 // variable to store the API key for shuttershock
 const clothingKey =
@@ -134,6 +69,30 @@ const searchObj = {
   warmrain: "adult warm rain clothes",
 };
 
+
+
+// Weather API variables
+let APIKey = "NTQ98KVPDV7PY54XFFEGJ4AT3";
+
+let cityInput = document.querySelector("location");
+let citySearched = "";
+let dateInput = document.querySelector("dateInput");
+let dateSearched = "";
+let weatherData = "";
+
+function setWeather() {
+  fetch(weatherData)
+    .then(function (response) {
+      return response.JSON();
+    })
+    .then(function (weatherConditions) {
+      let temperature = weatherConditions.temp;
+      let feelsLike = weatherConditions.feelslike;
+      let conditionsToday = weatherConditions.conditions;
+      
+      console.log(temperature, feelsLike, conditionsToday);
+    });
+}
 // event listener for search buttonn
 document.addEventListener(
   "DOMContentLoaded",
@@ -141,11 +100,15 @@ document.addEventListener(
     let searchBtn = document.querySelector("#searchBtn");
 
     searchBtn.addEventListener("click", function () {
-      citySearched = citySearched.value;
+      citySearched = cityInput.value;
+      dateSearched = dateInput.value;
 
       weatherData =
         "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/" +
         citySearched +
+        "?unitGroup=us&elements=" +
+        dateSearched +
+        "%2Ctemp%2Cconditions&include=days%2Ccurrent" + 
         APIKey +
         "&contentType=json";
       //setWeather();
