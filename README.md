@@ -1,5 +1,5 @@
 # WeatherWear
-<!--An application that analyzes the weather and suggests which type of outerwear would be most suitable. -->
+
 
 ## Description
     Our group set out to create an application that allows its user to enter a location, date, and clothing style and then recieve the projected weather along with suggestions of what to wear.
