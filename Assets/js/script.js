@@ -72,25 +72,12 @@ const searchObj = {
 // Weather API variables
 let APIKey = "NTQ98KVPDV7PY54XFFEGJ4AT3";
 
-let cityInput = document.querySelector("location");
+let cityInput = document.querySelector("locationInput");
 let citySearched = "";
 let dateInput = document.querySelector("dateInput");
 let dateSearched = "";
 let weatherData = "";
 
-function setWeather() {
-  fetch(weatherData)
-    .then(function (response) {
-      return response.JSON();
-    })
-    .then(function (weatherConditions) {
-      let temperature = weatherConditions.temp;
-      let feelsLike = weatherConditions.feelslike;
-      let conditionsToday = weatherConditions.conditions;
-
-      console.log(temperature, feelsLike, conditionsToday);
-    });
-}
 // event listener for search buttonn
 document.addEventListener(
   "DOMContentLoaded",
@@ -115,5 +102,19 @@ document.addEventListener(
   },
   false
 );
+
+function setWeather() {
+  fetch(weatherData)
+    .then(function (response) {
+      return response.JSON();
+    })
+    .then(function (weatherConditions) {
+      let temperature = weatherConditions.temp;
+      let feelsLike = weatherConditions.feelslike;
+      let conditionsToday = weatherConditions.conditions;
+      
+      console.log(temperature, feelsLike, conditionsToday);
+    });
+}
 
 // people_gender; Valid values: male, female, both
