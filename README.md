@@ -2,7 +2,7 @@
 
 
 ## Description
-    Our group set out to create an application that allows its user to enter a location, date, and clothing style and then recieve the projected weather along with suggestions of what to wear.
+Our group set out to create an application that allows its user to enter a location, date, and clothing style and then recieve the projected weather along with suggestions of what to wear.
 We were able to create this application using the past few months of classes, teamwork, and a bit of intsructor guidance to build a site that meets the previously mentioned goal aswell as meets the following criteria:
 <ul>
 <li> 2 server-side APIs utilized
