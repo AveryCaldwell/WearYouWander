@@ -93,7 +93,7 @@ document.addEventListener(
         citySearched +
         "?unitGroup=us&elements=" +
         dateSearched +
-        "%2Ctemp%2Cconditions&include=days%2Ccurrent" +
+        "%2Ctemp%2Cfeelslike%2Cconditions&include=days%2Cstatsfcst%2Cfcst%2Ccurrent&key=" +
         APIKey +
         "&contentType=json";
       //setWeather();
@@ -104,21 +104,75 @@ document.addEventListener(
 );
 
 function setWeather() {
-  fetch(weatherData)
-    .then(function (response) {
+  fetch(weatherData) 
+     .then(function (response) {
       return response.JSON();
     })
+    
     .then(function (weatherConditions) {
+      let historicalFcst = weatherConditions.statsfcst;
       let temperature = weatherConditions.temp;
       let feelsLike = weatherConditions.feelslike;
       let conditionsToday = weatherConditions.conditions;
       
-      console.log(temperature, feelsLike, conditionsToday);
+      console.log(historicalFcst, temperature, feelsLike, conditionsToday);
     });
-}
+
 
 // people_gender; Valid values: male, female, both
 
 
+const buttonElem = document.querySelector(".searchBtn");
+const modalElen = document.querySelector(".container");
 
-// weather hide
+modalElen.getElementsByClassName.cssText = `
+display:flex;
+visibility:hidden;
+opacity:0;
+transition:opacity 300ms easy-in-out;
+`;
+const openModal = () => {
+  modalElen.style.visibility = "visible";
+  modalElen.style.opacity = 1;
+};
+openModal();
+
+/* 
+fetch("https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/united%20states?unitGroup=us&elements=datetime%2Ctemp%2Cfeelslike%2Cconditions&include=days%2Cstatsfcst%2Cfcst%2Ccurrent&key=NTQ98KVPDV7PY54XFFEGJ4AT3&contentType=json", {
+  "method": "GET",
+  "headers": {
+  }
+  })
+.then(response => {
+  console.log(response);
+})
+.catch(err => {
+  console.error(err);
+});
+JSON response would be:
+{
+ "queryCost": 1,
+ "latitude": 38.8904,
+ "longitude": -77.032,
+ "resolvedAddress": "United States",
+ "address": "united states",
+ "timezone": "America/New_York",
+ "tzoffset": -5,
+ "days": [
+  {
+   "datetime": "2022-12-22",
+   "datetimeEpoch": 1671685200,
+   "temp": 53,
+   "feelslike": 53,
+   "conditions": "Rain, Overcast"
+  }
+ ],
+ "currentConditions": {
+  "datetime": "23:10:00",
+  "datetimeEpoch": 1671768600,
+  "temp": 53.7,
+  "feelslike": 53.7,
+  "conditions": "Overcast"
+ }
+} */
+
