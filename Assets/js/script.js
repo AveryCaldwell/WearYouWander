@@ -115,6 +115,7 @@ function randomImage() {
   }
 }
 
+//TODO: update
 // Transalation object that sets image search parameters
 const weatherTranslationObj = {
   cold: {
