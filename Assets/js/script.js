@@ -121,6 +121,7 @@ function setWeather() {
 
 // people_gender; Valid values: male, female, both
 
+
 const buttonElem = document.querySelector(".searchBtn");
 const modalElen = document.querySelector(".container");
 
@@ -174,3 +175,4 @@ JSON response would be:
   "conditions": "Overcast"
  }
 } */
+
