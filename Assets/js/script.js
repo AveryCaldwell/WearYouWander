@@ -118,3 +118,20 @@ function setWeather() {
 }
 
 // people_gender; Valid values: male, female, both
+
+
+const buttonElem = document.querySelector('.searchBtn');
+const modalElen = document.querySelector('.container')
+
+modalElen.getElementsByClassName.cssText = `
+display:flex;
+visibility:hidden;
+opacity:0;
+transition:opacity 300ms easy-in-out;
+`;
+const openModal =()=>{
+  modalElen.style.visibility = 'visible';
+  modalElen.style.opacity =1;
+}
+openModal()
+

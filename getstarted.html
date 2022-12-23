@@ -34,10 +34,6 @@
     <form>
       <h3>WearYouWander</h3>
       <div class="row columns">
-        <!-- remove name label -->
-        <label>Name
-          <input type="text" name="keyword" placeholder="Any">
-        </label>
       </div>
       <div class="row columns">
         <label>Gender
@@ -50,8 +46,6 @@
           </select>
         </label>
       </div>
-
-      <!-- the date input does not work -->
       <div class="row columns">
         <label>Date
           <select name="status" type="text">
@@ -66,38 +60,92 @@
           <input type="text" name="location" placeholder="Any">
         </label>
       </div>
-      <button type="button" id="searchBtn" class="primary button expanded search-button">
+      <button type="button" id="myBtn" class="primary button expanded search-button">
         Search
       </button>
     </form>
   </div>
 
   <!-- Clothing Image container -->
-  <!--  images need to be bigger -->
   <div class="container">
-    <div class="box">
-      <img src="./img/Team1.jpeg" id="option1img" alt="">
+
+    <div class="mySlides">
+      <div class="numbertext">1 / 6</div>
+        <img src="./img/Team1.jpeg" style="width:100%">
     </div>
-    <div class="box">
-      <img src="./img/Team2.jpeg" id="option2img" alt="">
+  
+    <div class="mySlides">
+      <div class="numbertext">2 / 6</div>
+        <img src="./img/Team2.jpeg" style="width:100%">
     </div>
-    <div class="box">
-      <img src="./img/Team3.jpeg" id="option3img" alt="">
+  
+    <div class="mySlides">
+      <div class="numbertext">3 / 6</div>
+        <img src="./img/Team3.jpeg" style="width:100%">
     </div>
-  </div>
-  <!-- img2 -->
-  <div class="container2">
-    <div class="box2">
-      <img src="./img/Team1.jpeg" id="option4img" alt="">
+  
+    <div class="mySlides">
+      <div class="numbertext">4 / 6</div>
+        <img src="./img/Team1.jpeg" style="width:100%">
     </div>
-    <div class="box">
-      <img src="./img/Team2.jpeg" id="option5img" alt="">
+  
+    <div class="mySlides">
+      <div class="numbertext">5 / 6</div>
+        <img src="./img/Team2.jpeg" style="width:100%">
     </div>
-    <div class="box">
-      <img src="./img/Team3.jpeg" id="option6img" alt="">
+  
+    <div class="mySlides">
+      <div class="numbertext">6 / 6</div>
+        <img src="./img/Team3.jpeg" style="width:100%">
+    </div>
+  
+    <!-- Next and previous buttons -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  
+    <!-- Image text -->
+    <div class="caption-container">
+      <p id="caption"></p>
+    </div>
+  
+    <!-- Thumbnail images -->
+    <div class="row">
+      <div class="column">
+        <img class="demo cursor" src="./img/Team1.jpeg" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="./img/Team2.jpeg" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="./img/Team3.jpeg" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="./img/Team1.jpeg" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="./img/Team2.jpeg" style="width:100%" onclick="currentSlide(5)" alt="Nature and sunrise">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="./img/Team3.jpeg" style="width:100%" onclick="currentSlide(6)" alt="Snowy Mountains">
+      </div>
     </div>
   </div>
 
+<!-- weather search  -->
+<div class="translucent-form-overlay2">
+  <form>
+    <h3>Weather</h3>
+    <div class="card-container">
+      <div class="card">
+        <div class="image image1"></div>
+        <p class="temp1">Temp:</p>
+        <p class="wind1">Wind:</p>
+        <p class="humidity1">Humidity:</p>
+        <p class="UV1">UV Index:</p>
+      </div>
+    </div>
+  </form>
+</div>
 
   <script>
     var navLinks = document.getElementById("navLinks")
@@ -108,6 +156,40 @@
       navLinks.style.right = "-200px";
     }
   </script>
+
+  <script>
+    var slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+  </script>
+  <script src="./assets/js/script.js"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.5/dist/js/foundation.min.js"
     crossorigin="anonymous"></script>
