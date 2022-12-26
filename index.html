@@ -9,17 +9,19 @@
   <link rel="stylesheet" href="./assets/css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nova+Square&family=Poppins:wght@200;300;400;600;700&display=swap"
-    rel="stylesheet">
-  <script src="https://kit.fontawesome.com/fc549d153f.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.5/dist/css/foundation.min.css"
-    crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Nova+Square&family=Poppins:wght@200;300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.5/dist/css/foundation.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   <link rel="stylesheet" href="./assets/css/style.css">
+
   <title>Document</title>
 
 </head>
 
 <body>
+
+  <!-- Nav Bar -->
+
     <section id="home" class="header">
       <nav>
         <a href="./index.html"><img src="./img/Logo.png"></a>
@@ -36,10 +38,141 @@
       </nav>
       <div class="text-box">
         <h1>WearYouWander</h1>
-        <p>The app delivers a personalized daily forecast to a users phone so they can know what to wear and if they need to bring an umbrella. <br> But more than just deliver weather information, WearYouWander allows users to customize the app to add favorite clothing items <br> or change their temperature preferences.</p>
-        <a href="./getstarted.html" class="hero-btn">GET STARTED</a>
+        <p>Discription Here</p>
        </div>
     </section>
+
+    <!-- Form -->
+    
+<section>
+  <div class="translucent-form-overlay">
+    <form>
+      <h3>WearYouWander</h3>
+      <div class="row columns">
+      </div>
+      <div class="row columns">
+        <label>Gender
+          <select name="status" type="text">
+            <option>Any</option>
+            <option value="rent">Male</option>
+            <option value="buy">Female</option>
+            <option value="buy">Non-binary</option>
+            <option value="buy">Prefer not to respond</option>
+          </select>
+        </label>
+      </div>
+      <div class="row columns">
+
+        <label>Clothing Style
+          <input type="text" name="location" placeholder="Any">
+        </label>
+      </div>
+      <div class="row columns">
+
+        <label>Location
+          <input type="text" name="location" placeholder="Any">
+        </label>
+      </div>
+      <div class="row columns">
+        <label>Date
+          <input type="textdate" name="location" placeholder="Any">
+        </label>
+      </div>
+      <button type="button" id="earchBtn" onclick="myFunction()" class="primary button expanded search-button">Search</button>
+    </form>
+  </div>
+</section>
+
+    <!-- Clothing Image container -->
+
+<section id="clothing">
+    <div class="container">
+
+      <div class="mySlides">
+        <div class="numbertext">1 / 6</div>
+        <img src="./img/Team1.jpeg" id="option1img" style="width:100%">
+      </div>
+  
+      <div class="mySlides">
+        <div class="numbertext">2 / 6</div>
+        <img src="./img/Team2.jpeg" id="option2img" style="width:100%">
+      </div>
+  
+      <div class="mySlides">
+        <div class="numbertext">3 / 6</div>
+        <img src="./img/Team3.jpeg" id="option3img" style="width:100%">
+      </div>
+  
+      <div class="mySlides">
+        <div class="numbertext">4 / 6</div>
+        <img src="./img/Team1.jpeg" id="option4img" style="width:100%">
+      </div>
+  
+      <div class="mySlides">
+        <div class="numbertext">5 / 6</div>
+        <img src="./img/Team2.jpeg" id="option5img" style="width:100%">
+      </div>
+  
+      <div class="mySlides">
+        <div class="numbertext">6 / 6</div>
+        <img src="./img/Team3.jpeg" id="option6img" style="width:100%">
+      </div>
+
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  
+      <div class="caption-container">
+        <p id="caption"></p>
+      </div>
+
+      <div class="row">
+        <div class="column">
+          <img class="demo cursor" src="./img/Team1.jpeg" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="./img/Team2.jpeg" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="./img/Team3.jpeg" style="width:100%" onclick="currentSlide(3)"
+            alt="Mountains and fjords">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="./img/Team1.jpeg" style="width:100%" onclick="currentSlide(4)"
+            alt="Northern Lights">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="./img/Team2.jpeg" style="width:100%" onclick="currentSlide(5)"
+            alt="Nature and sunrise">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="./img/Team3.jpeg" style="width:100%" onclick="currentSlide(6)"
+            alt="Snowy Mountains">
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- Weather section -->
+
+<section>
+<div class="translucent-form-overlay2">
+  <form>
+    <h3>Weather</h3>
+    <div class="card-container">
+      <div class="card">
+        <div class="image image1"></div>
+        <p class="temp1">Temp:</p>
+        <p class="wind1">Wind:</p>
+        <p class="humidity1">Humidity:</p>
+        <p class="UV1">UV Index:</p>
+
+
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- Our Services -->
 
   <section id="servicelink" class="ourServices">
     <h1>OUR SERVICES</h1>
@@ -63,6 +196,8 @@
       </div>
     </div>
   </section>
+
+  <!-- Our Team -->
 
   <section id="team" class="ourTeam">
     <h1>OUR TEAM</h1>
@@ -90,10 +225,9 @@
       </div>
     </div>
     </div>
-
   </section>
 
-
+<!-- About Us and Footer -->
 
   <section id="about" class="footer">
     <h4>ABOUT US</h4>
@@ -107,9 +241,10 @@
     </div>
   </section>
 
-  <script src="./Assets/js/script.js"></script>
+<!-- Script For Nav Bar -->
 
   <script>
+
     var navLinks = document.getElementById("navLinks")
     function showMenu() {
       navLinks.style.right = "0";
@@ -118,8 +253,46 @@
       navLinks.style.right = "-200px";
     }
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.5/dist/js/foundation.min.js"
-    crossorigin="anonymous"></script>
+
+<!-- Script for Clothing Image container  -->
+
+<script>
+  var slideIndex = 1;
+  showSlides(slideIndex);
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+  function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("demo");
+    var captionText = document.getElementById("caption");
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+    captionText.innerHTML = dots[slideIndex - 1].alt;
+  }
+</script>
+
+
+
+  <script src="./Assets/js/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.5/dist/js/foundation.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://kit.fontawesome.com/fc549d153f.js" crossorigin="anonymous"></script>
+  <script>
+    flatpickr("input[type=textdate", {});
+  </script>
 
 </body>
 
