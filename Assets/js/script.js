@@ -110,12 +110,20 @@ function setWeather() {
       }
       };
     .then((response) => (response.JSON ())) {
-      console.log(response);
+        return response.json(); // this becomes data in the next function
+  } else {
+    return false;
   }
-    /*.then(function (response) {
-      return response.JSON();
-    })
-    */
+}
+// if invalid city is entered
+      .then((data) => {
+      if (!data) {
+        alert("Invalid city name, please give a valid city name.");
+           } else {
+        // Data is now stored in the cityWeather variable
+        cityWeather = data;
+           }
+
     .then(function (weatherConditions) {
       let historicalFcst = weatherConditions.statsfcst;
       let temperature = weatherConditions.temp;
@@ -124,12 +132,17 @@ function setWeather() {
       
       console.log(historicalFcst, temperature, feelsLike, conditionsToday);
     });
+    // people_gender; Valid values: male, female, both
 }
 // !!! Weather forecast requests for single locations include the current conditions as property ‘currentConditions’ of the location object. The currentConditions property resembles a single row of the forecast or history values area
 // Each location will return an array of weather data values in the values array. Each value returns the weather data for a single period of time: temp
 // locationMode=single
 
-// people_gender; Valid values: male, female, both
+//TO DO:
+// - must pick future date 
+// - cant leave spaces blank
+// - must choose city 
+// - must choose a clothing option or defaults both?
 
 const buttonElem = document.querySelector(".searchBtn");
 const modalElen = document.querySelector(".container");
