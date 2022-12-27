@@ -19,6 +19,7 @@
 </head>
 
 <body>
+  
 
   <!-- Nav Bar -->
 
@@ -36,141 +37,147 @@
         </div>
         <i class="fa-solid fa-bars" onclick="showMenu()"></i>
       </nav>
-      <div class="text-box">
+      <div class="text-box" id="text-home">
         <h1>WearYouWander</h1>
         <p>Discription Here</p>
        </div>
     </section>
 
-    <!-- Form -->
-    
-<section>
-  <div class="translucent-form-overlay">
-    <form>
-      <h3>WearYouWander</h3>
-      <div class="row columns">
-      </div>
-      <div class="row columns">
-        <label>Gender
-          <select name="status" type="text">
-            <option>Any</option>
-            <option value="rent">Male</option>
-            <option value="buy">Female</option>
-            <option value="buy">Non-binary</option>
-            <option value="buy">Prefer not to respond</option>
-          </select>
-        </label>
-      </div>
-      <div class="row columns">
+    <section>
 
-        <label>Clothing Style
-          <input type="text" name="location" placeholder="Any">
-        </label>
-      </div>
-      <div class="row columns">
-
-        <label>Location
-          <input type="text" name="location" placeholder="Any">
-        </label>
-      </div>
-      <div class="row columns">
-        <label>Date
-          <input type="textdate" name="location" placeholder="Any">
-        </label>
-      </div>
-      <button type="button" id="earchBtn" onclick="myFunction()" class="primary button expanded search-button">Search</button>
-    </form>
-  </div>
-</section>
-
-    <!-- Clothing Image container -->
-
-<section id="clothing">
-    <div class="container">
-
-      <div class="mySlides">
-        <div class="numbertext">1 / 6</div>
-        <img src="./img/Team1.jpeg" id="option1img" style="width:100%">
-      </div>
-  
-      <div class="mySlides">
-        <div class="numbertext">2 / 6</div>
-        <img src="./img/Team2.jpeg" id="option2img" style="width:100%">
-      </div>
-  
-      <div class="mySlides">
-        <div class="numbertext">3 / 6</div>
-        <img src="./img/Team3.jpeg" id="option3img" style="width:100%">
-      </div>
-  
-      <div class="mySlides">
-        <div class="numbertext">4 / 6</div>
-        <img src="./img/Team1.jpeg" id="option4img" style="width:100%">
-      </div>
-  
-      <div class="mySlides">
-        <div class="numbertext">5 / 6</div>
-        <img src="./img/Team2.jpeg" id="option5img" style="width:100%">
-      </div>
-  
-      <div class="mySlides">
-        <div class="numbertext">6 / 6</div>
-        <img src="./img/Team3.jpeg" id="option6img" style="width:100%">
-      </div>
-
-      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-      <a class="next" onclick="plusSlides(1)">&#10095;</a>
-  
-      <div class="caption-container">
-        <p id="caption"></p>
-      </div>
+          <!-- Form -->
 
       <div class="row">
-        <div class="column">
-          <img class="demo cursor" src="./img/Team1.jpeg" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
-        </div>
-        <div class="column">
-          <img class="demo cursor" src="./img/Team2.jpeg" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
-        </div>
-        <div class="column">
-          <img class="demo cursor" src="./img/Team3.jpeg" style="width:100%" onclick="currentSlide(3)"
-            alt="Mountains and fjords">
-        </div>
-        <div class="column">
-          <img class="demo cursor" src="./img/Team1.jpeg" style="width:100%" onclick="currentSlide(4)"
-            alt="Northern Lights">
-        </div>
-        <div class="column">
-          <img class="demo cursor" src="./img/Team2.jpeg" style="width:100%" onclick="currentSlide(5)"
-            alt="Nature and sunrise">
-        </div>
-        <div class="column">
-          <img class="demo cursor" src="./img/Team3.jpeg" style="width:100%" onclick="currentSlide(6)"
-            alt="Snowy Mountains">
+        <div class="translucent-form-overlay">
+          <form>
+            <h3>WearYouWander</h3>
+            <div class="row columns">
+            </div>
+            <div class="row columns">
+              <label>Gender
+                <select name="status" type="text">
+                  <option>Any</option>
+                  <option value="rent">Male</option>
+                  <option value="buy">Female</option>
+                  <option value="buy">Non-binary</option>
+                  <option value="buy">Prefer not to respond</option>
+                </select>
+              </label>
+            </div>
+            <div class="row columns">
+      
+              <label>Clothing Style
+                <input type="text" name="location" placeholder="Any">
+              </label>
+            </div>
+            <div class="row columns">
+      
+              <label>Location
+                <input type="text" name="location" placeholder="Any">
+              </label>
+            </div>
+            <div class="row columns">
+              <label>Date
+                <input type="textdate" name="location" placeholder="Any">
+              </label>
+            </div>
+            <button type="button" id="earchBtn" onclick="myFunction();myFunction2();showOrHideDiv()" class="primary button expanded search-button">Search</button>
+          </form>
         </div>
       </div>
-    </div>
-  </section>
 
-    <!-- Weather section -->
+      <!-- Clothing Image container -->
 
-<section>
-<div class="translucent-form-overlay2">
-  <form>
-    <h3>Weather</h3>
-    <div class="card-container">
-      <div class="card">
-        <div class="image image1"></div>
-        <p class="temp1">Temp:</p>
-        <p class="wind1">Wind:</p>
-        <p class="humidity1">Humidity:</p>
-        <p class="UV1">UV Index:</p>
+      <div class="row">
+        <div class="container" id="Clothing">
 
-
+          <div class="mySlides">
+            <div class="numbertext">1 / 6</div>
+            <img src="./img/Team1.jpeg" id="option1img" style="width:100%">
+          </div>
+      
+          <div class="mySlides">
+            <div class="numbertext">2 / 6</div>
+            <img src="./img/Team2.jpeg" id="option2img" style="width:100%">
+          </div>
+      
+          <div class="mySlides">
+            <div class="numbertext">3 / 6</div>
+            <img src="./img/Team3.jpeg" id="option3img" style="width:100%">
+          </div>
+      
+          <div class="mySlides">
+            <div class="numbertext">4 / 6</div>
+            <img src="./img/Team1.jpeg" id="option4img" style="width:100%">
+          </div>
+      
+          <div class="mySlides">
+            <div class="numbertext">5 / 6</div>
+            <img src="./img/Team2.jpeg" id="option5img" style="width:100%">
+          </div>
+      
+          <div class="mySlides">
+            <div class="numbertext">6 / 6</div>
+            <img src="./img/Team3.jpeg" id="option6img" style="width:100%">
+          </div>
+    
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      
+          <div class="caption-container">
+            <p id="caption"></p>
+          </div>
+    
+          <div class="row">
+            <div class="column">
+              <img class="demo cursor" src="./img/Team1.jpeg" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
+            </div>
+            <div class="column">
+              <img class="demo cursor" src="./img/Team2.jpeg" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
+            </div>
+            <div class="column">
+              <img class="demo cursor" src="./img/Team3.jpeg" style="width:100%" onclick="currentSlide(3)"
+                alt="Mountains and fjords">
+            </div>
+            <div class="column">
+              <img class="demo cursor" src="./img/Team1.jpeg" style="width:100%" onclick="currentSlide(4)"
+                alt="Northern Lights">
+            </div>
+            <div class="column">
+              <img class="demo cursor" src="./img/Team2.jpeg" style="width:100%" onclick="currentSlide(5)"
+                alt="Nature and sunrise">
+            </div>
+            <div class="column">
+              <img class="demo cursor" src="./img/Team3.jpeg" style="width:100%" onclick="currentSlide(6)"
+                alt="Snowy Mountains">
+            </div>
+          </div>
+        </div>
       </div>
-    </form>
-  </div>
-</section>
+
+       <!-- Weather section -->
+
+      <div class="row">
+        <div class="translucent-form-overlay2" id="Weather">
+          <form>
+            <h3>Weather</h3>
+            <div class="card-container">
+              <div class="card">
+                <div class="image image1"></div>
+                <p class="temp1">Temp:</p>
+                <p class="wind1">Wind:</p>
+                <p class="humidity1">Humidity:</p>
+                <p class="UV1">UV Index:</p>
+        
+        
+              </div>
+            </form>
+          </div>
+      </div>
+      
+    </section>
+
+    
 
 <!-- Our Services -->
 
@@ -181,18 +188,15 @@
     <div class="row">
       <div class="services-col">
         <h3>1 service</h3>
-        <p>The app delivers a personalized daily forecast to a users phone so they can know what to wear and if they
-          need to bring an umbrella, hence the name.</p>
+        <p>Discription Here</p>
       </div>
       <div class="services-col">
         <h3>2 service</h3>
-        <p>Allows users to customize the app to add favorite clothing items or change their temperature preferences.
-        </p>
+        <p>Discription Here</p>
       </div>
       <div class="services-col">
         <h3>3 service</h3>
-        <p>It also delivers a whimsical greeting with each days notification such as, “Good morning, Matt! There is no
-          storm in the forecast, but you will bring the thunder wearing your T-shirt and shorts. </p>
+        <p>Discription Here</p>
       </div>
     </div>
   </section>
@@ -231,8 +235,7 @@
 
   <section id="about" class="footer">
     <h4>ABOUT US</h4>
-    <P>uyhbaousdyfhousaidhfo hsoidauhfoaisduhoiuhfoiudsahio fuhoisuadhfoisdhuaoifuhio saudhfi
-      saoifunosiadnfosdfunoisdunfaoi uasndofi </P>
+    <P>Discription Here</P>
     <div class="icons">
       <i class="fa-brands fa-github"></i>
       <i class="fa-brands fa-twitter"></i>
@@ -284,6 +287,38 @@
   }
 </script>
 
+ <!-- Script for show and hide divs -->
+
+<script>
+  function myFunction() {
+  var x = document.getElementById("Weather");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
+<script>
+    function myFunction2() {
+  var x = document.getElementById("Clothing");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
+<script>
+  function showOrHideDiv() {
+     var v = document.getElementById("text-home");
+     if (v.style.display === "block") {
+        v.style.display = "none";
+     } else {
+        v.style.display = "none";
+     }
+  }
+</script>
 
 
   <script src="./Assets/js/script.js"></script>
