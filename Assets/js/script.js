@@ -104,11 +104,18 @@ document.addEventListener(
 );
 
 function setWeather() {
-  fetch(weatherData) 
-     .then(function (response) {
+  fetch(weatherData) {
+      "method": "GET",
+      "headers": {
+      }
+      };
+    .then((response) => (response.JSON ())) {
+      console.log(response);
+  }
+    /*.then(function (response) {
       return response.JSON();
     })
-    
+    */
     .then(function (weatherConditions) {
       let historicalFcst = weatherConditions.statsfcst;
       let temperature = weatherConditions.temp;
@@ -117,10 +124,12 @@ function setWeather() {
       
       console.log(historicalFcst, temperature, feelsLike, conditionsToday);
     });
-
+}
+// !!! Weather forecast requests for single locations include the current conditions as property ‘currentConditions’ of the location object. The currentConditions property resembles a single row of the forecast or history values area
+// Each location will return an array of weather data values in the values array. Each value returns the weather data for a single period of time: temp
+// locationMode=single
 
 // people_gender; Valid values: male, female, both
-
 
 const buttonElem = document.querySelector(".searchBtn");
 const modalElen = document.querySelector(".container");
@@ -174,5 +183,6 @@ JSON response would be:
   "feelslike": 53.7,
   "conditions": "Overcast"
  }
-} */
+}
 
+*/
