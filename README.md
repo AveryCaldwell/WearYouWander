@@ -21,6 +21,6 @@ The user will then be presented with the current weather conditions for the sear
 
 
 ## Links
-Deployed Application:
+Deployed Application: [https://averycaldwell.github.io/WearYouWander/](https://averycaldwell.github.io/WearYouWander/)
 
-GitHib Repository: 
+GitHib Repository: [https://github.com/AveryCaldwell/WearYouWander](https://github.com/AveryCaldwell/WearYouWander)
