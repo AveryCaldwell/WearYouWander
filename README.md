@@ -19,6 +19,7 @@ We were able to create this application using the past few months of classes, te
 When a user clicks on the first link below they are brought to a page resembling the following screenshot, and they are able to then select a clothing style, select dates they wish to dress for, and input a location.
 The user will then be presented with the current weather conditions for the searched for location aswell as 6 photo suggestions of clothing suitable for that weather.
 
+<img src="./Assets/img/wearyouwander-homePg.png">
 
 ## Links
 Deployed Application: [https://averycaldwell.github.io/WearYouWander/](https://averycaldwell.github.io/WearYouWander/)
