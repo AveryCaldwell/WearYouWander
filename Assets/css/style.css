@@ -462,6 +462,11 @@ p {
   line-height: 22px;
   padding: 10px;
 }
+.titleText {
+  text-align: center;
+  font-size: 36px;
+  color: var(--blue);
+}
 .row {
   margin-top: 5%;
   display: flex;
