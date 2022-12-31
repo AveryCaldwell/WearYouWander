@@ -14,320 +14,217 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.5/dist/css/foundation.min.css"
     crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-  <link rel="stylesheet" href="./assets/css/style.css">
-
   <title>Wear You Wander</title>
-
 </head>
 
 <body>
 
-
   <!-- Nav Bar -->
-
   <section id="home" class="header">
     <nav>
-      <a href="./index.html"><img src="./Assets/img/Logo.png"></a>
-      <div class="nav-links" id="navLinks">
+      <a href="./index.html"><img src="./Assets/img/WYWlogo.png"></a>
+      <div class="nav-links" id="yeanavLinks">
         <i class="fa-solid fa-xmark" onclick="hideMenu()"></i>
         <ul>
           <li><a href="#home">HOME</a></li>
-          <li><a href="#servicelink">OUR SERVICES</a></li>
+          <li><a href="#servicelink">OUR SERVICE</a></li>
           <li><a href="#team">OUR TEAM</a></li>
           <li><a href="#about">ABOUT US</a></li>
         </ul>
       </div>
       <i class="fa-solid fa-bars" onclick="showMenu()"></i>
     </nav>
-    <div class="text-box" id="text-home">
-      <h1>WearYouWander</h1>
-      <p>Discription Here</p>
+    <a href="#servicelink">
+      <div class="next-section"><img src="./Assets/img/downArrow.png" /></div>
+    </a>
+
+    <!-- Prompts if not enough images populated during search -->
+    <div class="reveal" id="search-modal" data-reveal>
+      <div>
+        <img src="./Assets/img/sadPupper.jpg" />
+      </div>
+      <h2>Search Results Aren't Great</h2>
+      <p>Our app is new and our image sourcing algorithm is always improving. The search that was input offered few
+        results, but we guarantee better results in the future. Thank you for your patience.</p>
+      <button class="close-button" data-close aria-label="Close modal" type="button">
+        <span aria-hidden="true">&times;</span>
+      </button>
     </div>
   </section>
 
-  <section>
-
-    <!-- Form -->
-
-    <div class="row">
-      <div class="translucent-form-overlay">
-        <form>
-          <h3>WearYouWander</h3>
-          <div class="row columns">
-          </div>
-          <div class="row columns">
-            <label>Clothing Style
-              <select name="status" type="text">
-                <option>Any</option>
-                <option value="rent">Masculine</option>
-                <option value="buy">Feminine</option>
-                <option value="buy">Both</option>
-                <!-- <option value="buy">Prefer not to respond</option> -->
-              </select>
-            </label>
-          </div>
-          <div class="row columns">
-
-            <!-- <label>Clothing Style -->
-            <!-- <input type="text" name="location" placeholder="Any"> -->
-            <!-- </label> -->
-            <!-- </div> -->
-            <!-- <div class="row columns"> -->
-
-            <label>Location
-              <input type="text" name="location" placeholder="City">
-            </label>
-          </div>
-          <div class="row columns">
-            <label>Date
-              <input type="textdate" name="location" placeholder="Date">
-            </label>
-          </div>
-          <button type="button" id="earchBtn" onclick="myFunction();myFunction2();showOrHideDiv()"
-            class="primary button expanded search-button">Search</button>
-        </form>
-      </div>
+  <!-- Homepage section -->
+  <section class="content-container">
+    <div class="text-box" id="text-home">
+      <img src="./Assets/img/airport.jpg">
+      <h2>Dear Wanderers,</h2>
+      <p> Don't know what to wear on your trip next month? Can't decide what to bring halfway across the world? We've
+        got you covered (pun intended)</br> TLDR: You'll know what to wear
+        wherever you wander.</p>
     </div>
 
     <!-- Clothing Image container -->
-
-    <div class="row">
-      <div class="container" id="Clothing">
-
-        <div class="mySlides">
-          <div class="numbertext">1 / 6</div>
-          <img src="./Assets/img/Team1.jpeg" id="option1img" style="width:100%">
+    <div class="img-card" id="Clothing">
+      <div class="img-container">
+        <div class="mySlides" id="carousel">
+          <img src="./Assets/img/Team1.jpeg" id="option1img">
+          <img src="./Assets/img/Team2.jpeg" id="option2img">
+          <img src="./Assets/img/Team3.jpeg" id="option3img">
+          <img src="./Assets/img/Team1.jpeg" id="option4img">
+          <img src="./Assets/img/Team2.jpeg" id="option5img">
+          <img src="./Assets/img/Team3.jpeg" id="option6img">
         </div>
-
-        <div class="mySlides">
-          <div class="numbertext">2 / 6</div>
-          <img src="./Assets/img/Team2.jpeg" id="option2img" style="width:100%">
-        </div>
-
-        <div class="mySlides">
-          <div class="numbertext">3 / 6</div>
-          <img src="./Assets/img/Team3.jpeg" id="option3img" style="width:100%">
-        </div>
-
-        <div class="mySlides">
-          <div class="numbertext">4 / 6</div>
-          <img src="./Assets/img/Team1.jpeg" id="option4img" style="width:100%">
-        </div>
-
-        <div class="mySlides">
-          <div class="numbertext">5 / 6</div>
-          <img src="./Assets/img/Team2.jpeg" id="option5img" style="width:100%">
-        </div>
-
-        <div class="mySlides">
-          <div class="numbertext">6 / 6</div>
-          <img src="./Assets/img/Team3.jpeg" id="option6img" style="width:100%">
-        </div>
-
+        <!-- carousel arrow buttons -->
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
         <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
-        <div class="caption-container">
-          <p id="caption"></p>
-        </div>
-
+        <!-- thumbnail images -->
         <div class="row">
           <div class="column">
-            <img class="demo cursor" src="./Assets/img/Team1.jpeg" style="width:100%" onclick="currentSlide(1)"
+            <img class="demo cursor" src="./Assets/img/Team1.jpeg" id="option1preview" onclick="currentSlide(1)"
               alt="The Woods">
           </div>
           <div class="column">
-            <img class="demo cursor" src="./Assets/img/Team2.jpeg" style="width:100%" onclick="currentSlide(2)"
+            <img class="demo cursor" src="./Assets/img/Team2.jpeg" id="option2preview" onclick="currentSlide(2)"
               alt="Cinque Terre">
           </div>
           <div class="column">
-            <img class="demo cursor" src="./Assets/img/Team3.jpeg" style="width:100%" onclick="currentSlide(3)"
+            <img class="demo cursor" src="./Assets/img/Team3.jpeg" id="option3preview" onclick="currentSlide(3)"
               alt="Mountains and fjords">
           </div>
           <div class="column">
-            <img class="demo cursor" src="./Assets/img/Team1.jpeg" style="width:100%" onclick="currentSlide(4)"
+            <img class="demo cursor" src="./Assets/img/Team1.jpeg" id="option4preview" onclick="currentSlide(4)"
               alt="Northern Lights">
           </div>
           <div class="column">
-            <img class="demo cursor" src="./Assets/img/Team2.jpeg" style="width:100%" onclick="currentSlide(5)"
+            <img class="demo cursor" src="./Assets/img/Team2.jpeg" id="option5preview" onclick="currentSlide(5)"
               alt="Nature and sunrise">
           </div>
           <div class="column">
-            <img class="demo cursor" src="./Assets/img/Team3.jpeg" style="width:100%" onclick="currentSlide(6)"
+            <img class="demo cursor" src="./Assets/img/Team3.jpeg" id="option6preview" onclick="currentSlide(6)"
               alt="Snowy Mountains">
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Weather section -->
-
-    <div class="row">
-      <div class="translucent-form-overlay2" id="Weather">
-        <form>
-          <h3>Weather</h3>
-          <div class="card-container">
-            <div class="card">
-              <div class="image image1"></div>
-              <p class="temp1">Temp:</p>
-              <p class="wind1">Wind:</p>
-              <p class="humidity1">Humidity:</p>
-              <p class="UV1">UV Index:</p>
-
-
-            </div>
-        </form>
-      </div>
+    <!-- Form -->
+    <div class="translucent-form-overlay">
+      <form>
+        <!-- shows after search button clicked -->
+        <!-- <h3><img src="./Assets/img/Logo.png"></h3> -->
+        <div class="row columns" id="searchCurrent">
+          <p id="searchDate">Date:</p>
+          <p id="searchLocation">Location:</p>
+          <p id="searchTemp">Temperature:</p>
+          <p id="searchCondition">Weather:</p>
+        </div>
+        <div class="row columns">
+          <label>Clothing Style
+            <select name="status" id="clothingStyle" type="text">
+              <option value="both">Any</option>
+              <option value="male">Masculine</option>
+              <option value="female">Feminine</option>
+              <option value="both">Both</option>
+            </select>
+          </label>
+        </div>
+        <div class="row columns">
+          <label>Age
+            <select name="status" id="selectAge" type="text">
+              <option value="Any">Any</option>
+              <!-- <option value="infants">Infant</option>
+              <option value="children">Children</option> -->
+              <option value="teenagers">Teenagers</option>
+              <option value="20s">20s</option>
+              <option value="30s">30s</option>
+              <option value="40s">40s</option>
+              <option value="50s">50s</option>
+              <option value="60s">60s</option>
+              <option value="older">Older</option>
+            </select>
+          </label>
+        </div>
+        <div class="row columns">
+          <label>Location
+            <input type="text" name="location" id="locationInput" placeholder="City">
+          </label>
+        </div>
+        <div class="row columns">
+          <label>Date
+            <input type="textdate" name="location" id="dateInput" placeholder="Date">
+          </label>
+        </div>
+        <button type="button" id="searchBtn" class=" primary button expanded search-button">Search</button>
+      </form>
     </div>
-
   </section>
 
-
-
   <!-- Our Services -->
-
   <section id="servicelink" class="ourServices">
-    <h1>What is "Wear You Wander?"</h1>
-    <p>An application that analyzes the weather and suggests which type of outerwear would be most suitable. </br> TLDR:
-      You'll know what to wear
-      wherever you wander.</p>
+    <div class="serviceAbout">
+      <h1>What is "Wear You Wander?"</h1>
+      <p>Wear You Wander is an application that analyzes historic weather patterns on a date selected and suggests which
+        type of outerwear
+        would be most suitable. </p>
+    </div>
     <div class="row">
       <div class="services-col">
         <h3>Clothing</h3>
-        <p>First, choose your clothing style.</p>
+        <p>First-off, choose your clothing style. Masculine, feminine, or a mix of both. Pair it with your age if you'd
+          like to see something more relevant to you.</p>
       </div>
       <div class="services-col">
-        <h3>Destination</h3>
-        <p>Second, choose your destination.</p>
+        <h3>Destination & Date</h3>
+        <p>Second, choose where you're headed, and when you're going. Traveling should be fun, you shouldn't have to
+          overthink what you're packing.</p>
       </div>
       <div class="services-col">
-        <h3>Date</h3>
-        <p>Lastly, select the date of travel.</p>
+        <h3>Plan</h3>
+        <p>Lastly, take a look at sample outerwear for where and when you're headed. With the historic weather forecast,
+          you'll always be prepared for your next adventure.</p>
       </div>
     </div>
   </section>
 
   <!-- Our Team -->
-
   <section id="team" class="ourTeam">
-    <h1>OUR TEAM</h1>
+    <h1>Our Team</h1>
     <!-- <p>The people of WearYouWander are smart, creative and ambitious.They look at problems from different -->
     <!-- perspectives,and find unexpected solutions.</p> -->
     <div class="row">
       <div class="team-col">
-        <img src="./Assets/img/Team1.jpeg" alt="">
+        <img src="./Assets/img/avery.jpg" alt="Avery Caldwell">
         <div class="layer">
           <h3>AVERY CALDWELL</h3>
         </div>
       </div>
       <div class="team-col">
-        <img src="./Assets/img/Team2.jpeg" alt="">
+        <img src="./Assets/img/anjali.png" alt="Anjali Roland">
         <div class="layer">
           <h3>ANJALI ROLAND</h3>
         </div>
       </div>
       <div class="team-col">
-        <img src="./Assets/img/Team3.jpeg" alt="">
+        <img src="./Assets/img/Team3.jpeg" alt="Amal Engulatov">
         <div class="layer">
           <h3>AMAL ENGULATOV</h3>
         </div>
-
       </div>
-    </div>
     </div>
   </section>
 
   <!-- About Us and Footer -->
-
   <section id="about" class="footer">
     <h4>ABOUT US</h4>
     <P>A group of Coding Bootcamp students that created an application using two server-side APIs to determine clothing
-      options based off weather in a certain location.</P>
-    <div class="icons">
-      <i class="fa-brands fa-github"></i>
-      <i class="fa-brands fa-twitter"></i>
-      <i class="fa-brands fa-linkedin"></i>
-      <i class="fa-brands fa-instagram"></i>
-    </div>
+      options based off historical weather data of a certain location.</P>
+    <a href="#home">
+      <div class="jump-section"><img src="./Assets/img/downArrow.png" /></div>
+    </a>
   </section>
 
-  <!-- Script For Nav Bar -->
-
-  <script>
-
-    var navLinks = document.getElementById("navLinks")
-    function showMenu() {
-      navLinks.style.right = "0";
-    }
-    function hideMenu() {
-      navLinks.style.right = "-200px";
-    }
-  </script>
-
-  <!-- Script for Clothing Image container  -->
-
-  <script>
-    var slideIndex = 1;
-    showSlides(slideIndex);
-    function plusSlides(n) {
-      showSlides(slideIndex += n);
-    }
-    function currentSlide(n) {
-      showSlides(slideIndex = n);
-    }
-    function showSlides(n) {
-      var i;
-      var slides = document.getElementsByClassName("mySlides");
-      var dots = document.getElementsByClassName("demo");
-      var captionText = document.getElementById("caption");
-      if (n > slides.length) { slideIndex = 1 }
-      if (n < 1) { slideIndex = slides.length }
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-      }
-      for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-      }
-      slides[slideIndex - 1].style.display = "block";
-      dots[slideIndex - 1].className += " active";
-      captionText.innerHTML = dots[slideIndex - 1].alt;
-    }
-  </script>
-
-  <!-- Script for show and hide divs -->
-
-  <script>
-    function myFunction() {
-      var x = document.getElementById("Weather");
-      if (x.style.display === "none") {
-        x.style.display = "block";
-      } else {
-        x.style.display = "none";
-      }
-    }
-  </script>
-  <script>
-    function myFunction2() {
-      var x = document.getElementById("Clothing");
-      if (x.style.display === "none") {
-        x.style.display = "block";
-      } else {
-        x.style.display = "none";
-      }
-    }
-  </script>
-  <script>
-    function showOrHideDiv() {
-      var v = document.getElementById("text-home");
-      if (v.style.display === "block") {
-        v.style.display = "none";
-      } else {
-        v.style.display = "none";
-      }
-    }
-  </script>
 
 
+  <script src="./assets/js/jquery.js" type="text/javascript"></script>
   <script src="./Assets/js/script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.5/dist/js/foundation.min.js"
     crossorigin="anonymous"></script>
