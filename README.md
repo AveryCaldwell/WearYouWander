@@ -15,6 +15,16 @@ We were able to create this application using the past few months of classes, te
 <li> Deployed from GitHub pages
 
 
+## Built With
+HTML, CSS, Foundation Framework, JavaScript, jQuery, Server Side APIs, Git Pages
+
+
+## Useful Resources
+
+Clothing API: https://api-reference.shutterstock.com/#overview-examples-for-the-shutterstock-cli
+
+Weather API: https://www.visualcrossing.com/resources/documentation/weather-api/timeline-weather-api/
+
 ## Usage
 When a user clicks on the first link below they are brought to a page resembling the following screenshot, and they are able to then select a clothing style, select dates they wish to dress for, and input a location.
 The user will then be presented with the current weather conditions for the searched for location aswell as 6 photo suggestions of clothing suitable for that weather.
@@ -25,3 +35,12 @@ The user will then be presented with the current weather conditions for the sear
 Deployed Application: [https://averycaldwell.github.io/WearYouWander/](https://averycaldwell.github.io/WearYouWander/)
 
 GitHib Repository: [https://github.com/AveryCaldwell/WearYouWander](https://github.com/AveryCaldwell/WearYouWander)
+
+
+## Authors
+
+Avery Caldwell - https://github.com/AveryCaldwell
+
+Amal Engulatov - https://github.com/AmalEN20
+
+Anjali Roland - https://github.com/anjaliroland
