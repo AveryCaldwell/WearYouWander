@@ -174,7 +174,7 @@ function convertWeather(weather) {
   // console.log(weather);
   // obj.condition = weatherConditions[condition];
   // console.log(obj);
-  console.log(weatherTranslationObj[obj.temp][obj.condition]);
+  // console.log(weatherTranslationObj[obj.temp][obj.condition]);
   getImageObj(searchObj[weatherTranslationObj[obj.temp][obj.condition]]);
 }
 // Obj of search keywords
