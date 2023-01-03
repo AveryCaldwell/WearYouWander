@@ -1,4 +1,4 @@
-// variable to store the API key for shuttershock
+// Variable to store the API key for shuttershock
 const clothingKey =
   'v2/ZDNjMjJHOWc4OXpHVFVrdjJ4d3dnWTdKbmJyQXZIUEovMzY5OTA4NDk3L2N1c3RvbWVyLzQvYlpzdFB0TVZEMVp2VGpta2Q3NzM1LWNDS3ZOZTBNeWo5NFp3T0tBQVZCRk9RekZVQVlxa05tcENQSmtoRGZRNUhXZkpIX0VkSzlHbXZBel9PS2lNWGp4SjlUZFNKMDlUWGJPTEdVUGdVakszWm9qMkZjM3BMUjZuWWNIVTNrYjJuVGhneTJDZzQ1NW5kRjg4by1LOEJkQUMzb0k5TkY5UGIxWG1qVzZkQnBnQ0FnQUVkcXhtTkJGQWluY19PbWxtTWlaeS1ucGVYZmtCSnR2QW9GaHRKdy8ycmJrbXhETTdlUDJOOHF3eTlrRHR3';
 
@@ -7,13 +7,13 @@ let returnedImages;
 function getImageObj(searchString) {
   let myHeaders = new Headers();
   myHeaders.append('Authorization', 'Bearer ' + clothingKey);
-  // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~needs explaining
+
   let requestOptions = {
     // GET is used to request data from a specified resource.
     method: 'GET',
     // headers required to be sent while using stutterstock API
     headers: myHeaders,
-    //
+
     redirect: 'follow',
   };
   // Clothing style selection
@@ -46,7 +46,7 @@ function getImageObj(searchString) {
     .then((response) => response.json())
     .then((data) => {
       returnedImages = data; // returnedImages will be used as data in the next function
-      console.log(data);
+      // console.log(data);
       randomImage();
     })
     .catch((error) => console.log('error', error));
@@ -61,7 +61,7 @@ function randomImage() {
     for (i = 1; i < 7; i++) {
       randomNumber = Math.floor(Math.random() * (length - 1));
       while (used.indexOf(randomNumber) !== -1) {
-        console.log('same image');
+        // console.log('same image');
         randomNumber = Math.floor(Math.random() * (length - 1));
       }
       used.push(randomNumber);
@@ -73,7 +73,7 @@ function randomImage() {
   } else {
     searchWarning();
     for (i = 0; i < length; i++) {
-      console.log('fired');
+      // console.log('fired');
       document.getElementById('option' + (i + 1) + 'img').src =
         returnedImages.data[i].assets.preview_1000.url;
       document.getElementById('option' + (i + 1) + 'preview').src =
@@ -90,7 +90,7 @@ function randomImage() {
     initUI();
   }, 500);
 }
-//TODO: update
+
 // Transalation object that sets image search parameters
 const weatherTranslationObj = {
   cold: {
@@ -101,7 +101,6 @@ const weatherTranslationObj = {
   medium: { wet: 'rain', clear: 'spring' },
   hot: { wet: 'warmrain', clear: 'summer' },
   // Temp wise dictates if it's cold,medium, or hot
-  // moisture dictates images shown. Need to group categories by arrays, check the array, and then output the archetype.
 };
 
 // Object of temperature ranges
@@ -172,13 +171,11 @@ function convertWeather(weather) {
   } else {
     obj.temp = 'hot';
   }
-  console.log(weather);
-  obj.condition = weatherConditions[condition];
-  console.log(obj);
+  // console.log(weather);
+  // obj.condition = weatherConditions[condition];
+  // console.log(obj);
   console.log(weatherTranslationObj[obj.temp][obj.condition]);
   getImageObj(searchObj[weatherTranslationObj[obj.temp][obj.condition]]);
-  /*Uncategorized
-   */
 }
 // Obj of search keywords
 const searchObj = {
@@ -192,36 +189,38 @@ const searchObj = {
 
 // Weather API variables
 let APIKey = 'NTQ98KVPDV7PY54XFFEGJ4AT3';
-
 let cityInput = document.querySelector('#locationInput');
-let citySearched = '';
+let citySearched;
 let dateInput = document.querySelector('#dateInput');
-let dateSearched = '';
-let weatherData = '';
+let dateSearched;
+let weatherData;
 
-// event listener for search buttonn
+// Event listener for search buttonn
 document.addEventListener(
   'DOMContentLoaded',
   function () {
     let searchBtn = document.querySelector('#searchBtn');
-
+    loadData();
     searchBtn.addEventListener('click', function () {
-      // city and date values set from user input
+      // City and date values set from user input
       citySearched = cityInput.value;
       dateSearched = dateInput.value;
-      // weather URL
-      //&elements=temp%2Cfeelslike%2Cconditions&include=days%2Cstatsfcst%2Cfcst%2Ccurrent
+      const storeObj = {
+        clothingStyle: document.getElementById('clothingStyle').value,
+        selectAge: document.getElementById('selectAge').value,
+        locationInput: citySearched,
+        dateInput: dateSearched,
+      };
+      storeData(storeObj);
       weatherURL = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${citySearched}/${dateSearched}/${dateSearched}?unitGroup=us&elements=temp%2Cfeelslike%2Cconditions&include=days&key=${APIKey}&contentType=json`;
       getWeather(weatherURL, dateSearched);
-
-      //getImageObj(searchObj[weatherTranslationObj["hot"]["clear"]]);
     });
   },
   false
 );
 
 let cityWeather;
-// fetch weather data and run convertWeather function
+// Fetch weather data and run convertWeather function
 function getWeather(weatherURL, dateSearched) {
   fetch(weatherURL, {
     method: 'GET',
@@ -230,7 +229,7 @@ function getWeather(weatherURL, dateSearched) {
     .then((response) => response.json())
 
     .then(function (data) {
-      console.log(data);
+      // console.log(data);
       convertWeather(data);
       document.getElementById(
         'searchDate'
@@ -257,8 +256,26 @@ function initUI() {
     clothing.style.display = 'block';
   }
 }
-
-var slideIndex = 1;
+// Stores properties in an object in local storage
+function storeData(obj) {
+  for (const prop in obj) {
+    localStorage.setItem(prop, obj[prop]);
+  }
+}
+// Loads data into an array
+function loadData() {
+  dataArray = ['clothingStyle', 'selectAge', 'locationInput', 'dateInput'];
+  let value, target;
+  for (i = 0; i < dataArray.length; i++) {
+    value = localStorage.getItem(dataArray[i]);
+    if (value !== null) {
+      target = document.getElementById(dataArray[i]);
+      target.value = value;
+    }
+  }
+}
+// Displays images in carousel
+let slideIndex = 1;
 showSlides(slideIndex);
 function plusSlides(n) {
   showSlides((slideIndex += n));
@@ -267,10 +284,9 @@ function currentSlide(n) {
   showSlides((slideIndex = n));
 }
 function showSlides(n) {
-  var i;
-  var slides = document.getElementById('carousel').children;
-  var dots = document.getElementsByClassName('demo');
-  // var captionText = document.getElementById("caption");
+  let i;
+  let slides = document.getElementById('carousel').children;
+  let dots = document.getElementsByClassName('demo');
   if (n > slides.length) {
     slideIndex = 1;
   }
@@ -285,33 +301,9 @@ function showSlides(n) {
   }
   slides[slideIndex - 1].style.display = 'block';
   dots[slideIndex - 1].className += ' active';
-  // captionText.innerHTML = dots[slideIndex - 1].alt;
 }
-
+// Modal that pops up if not enough search results
 function searchWarning() {
-  var popup = new Foundation.Reveal($('#search-modal'));
+  let popup = new Foundation.Reveal($('#search-modal'));
   popup.open();
 }
-// !!! Weather forecast requests for single locations include the current conditions as property ‘currentConditions’ of the location object. The currentConditions property resembles a single row of the forecast or history values area
-// Each location will return an array of weather data values in the values array. Each value returns the weather data for a single period of time: temp
-// locationMode=single
-
-//TO DO:
-// - must pick future date
-// - cant leave spaces blank
-// - must choose city
-
-// const buttonElem = document.querySelector(".searchBtn");
-// const modalElen = document.querySelector(".container");
-
-// modalElen.getElementsByClassName.cssText = `
-// display:flex;
-// visibility:visible;
-// opacity:1;
-// transition:opacity 300ms easy-in-out;
-// `;
-// const openModal = () => {
-//   modalElen.style.visibility = "visible";
-//   modalElen.style.opacity = 1;
-// };
-// openModal();
