@@ -40,7 +40,7 @@ nav {
   align-items: center;
 }
 nav img {
-  width: 150px;
+  width: 200px;
 }
 .nav-links {
   flex: 1;
@@ -190,7 +190,7 @@ nav .fa-solid {
 }
 
 .translucent-form-overlay h3 img {
-  height: 120px;
+  height: 215px;
 }
 .translucent-form-overlay input,
 .translucent-form-overlay select,
