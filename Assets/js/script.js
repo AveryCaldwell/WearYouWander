@@ -172,7 +172,7 @@ function convertWeather(weather) {
     obj.temp = 'hot';
   }
   // console.log(weather);
-  // obj.condition = weatherConditions[condition];
+  obj.condition = weatherConditions[condition];
   // console.log(obj);
   // console.log(weatherTranslationObj[obj.temp][obj.condition]);
   getImageObj(searchObj[weatherTranslationObj[obj.temp][obj.condition]]);
