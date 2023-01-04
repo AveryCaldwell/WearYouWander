@@ -40,7 +40,7 @@ nav {
   align-items: center;
 }
 nav img {
-  width: 200px;
+  width: 175px;
 }
 .nav-links {
   flex: 1;
@@ -117,7 +117,6 @@ nav .fa-solid {
 }
 .img-card {
   margin: auto;
-  /* top: Calc(50% - 325px); */
   width: 60%;
   padding: 20px;
   display: block;
@@ -190,7 +189,7 @@ nav .fa-solid {
 }
 
 .translucent-form-overlay h3 img {
-  height: 215px;
+  height: 175px;
 }
 .translucent-form-overlay input,
 .translucent-form-overlay select,
@@ -471,8 +470,8 @@ h3 {
   padding-bottom: 0px;
 }
 
-/* responsive design */
-@media (max-width: 700px) {
+/* Medium devices (landscape tablets, 768px and up) */
+@media (max-width: 768px) {
   .row {
     flex-direction: column;
   }

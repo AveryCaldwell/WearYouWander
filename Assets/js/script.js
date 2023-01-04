@@ -46,7 +46,6 @@ function getImageObj(searchString) {
     .then((response) => response.json())
     .then((data) => {
       returnedImages = data; // returnedImages will be used as data in the next function
-      // console.log(data);
       randomImage();
     })
     .catch((error) => console.log('error', error));
@@ -71,9 +70,9 @@ function randomImage() {
         returnedImages.data[randomNumber].assets.small_thumb.url;
     }
   } else {
+    // Modal pops up
     searchWarning();
     for (i = 0; i < length; i++) {
-      // console.log('fired');
       document.getElementById('option' + (i + 1) + 'img').src =
         returnedImages.data[i].assets.preview_1000.url;
       document.getElementById('option' + (i + 1) + 'preview').src =
@@ -171,10 +170,7 @@ function convertWeather(weather) {
   } else {
     obj.temp = 'hot';
   }
-  // console.log(weather);
   obj.condition = weatherConditions[condition];
-  // console.log(obj);
-  // console.log(weatherTranslationObj[obj.temp][obj.condition]);
   getImageObj(searchObj[weatherTranslationObj[obj.temp][obj.condition]]);
 }
 // Obj of search keywords
@@ -195,7 +191,7 @@ let dateInput = document.querySelector('#dateInput');
 let dateSearched;
 let weatherData;
 
-// Event listener for search buttonn
+// Event listener for search button and values are stored in an object
 document.addEventListener(
   'DOMContentLoaded',
   function () {
@@ -220,16 +216,14 @@ document.addEventListener(
 );
 
 let cityWeather;
-// Fetch weather data and run convertWeather function
+// Fetch weather data and put values into the html
 function getWeather(weatherURL, dateSearched) {
   fetch(weatherURL, {
     method: 'GET',
     headers: {},
   })
     .then((response) => response.json())
-
     .then(function (data) {
-      // console.log(data);
       convertWeather(data);
       document.getElementById(
         'searchDate'
