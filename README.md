@@ -50,7 +50,7 @@ When a user clicks on the first link below they are brought to a page resembling
 The user will then be presented with the current weather conditions for the searched for location aswell as 6 photo suggestions of clothing suitable for that weather.
 
 ### Screenshot:
-<img src="./Assets/img/wearyouwander-homePg.png">
+<img src="./Assets/img/landingPage.png">
 
 ### Links
 Deployed Application: [https://averycaldwell.github.io/WearYouWander/](https://averycaldwell.github.io/WearYouWander/)
